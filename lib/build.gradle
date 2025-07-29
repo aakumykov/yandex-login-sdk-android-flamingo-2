@@ -34,12 +34,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
+
+    buildFeatures {
+        buildConfig true
     }
 
     testVariants.all {
@@ -52,6 +49,14 @@ android {
         it.mergedFlavor.manifestPlaceholders += [
                 YANDEX_CLIENT_ID: "fcdddf83a97843ae80815c1c9247015b",
         ]
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
